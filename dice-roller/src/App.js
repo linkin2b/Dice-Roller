@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactDOM } from "react-dom";
+import { ReactDOM, render } from "react-dom";
 import './src/App.css';
 
 //establish die paramenters
@@ -21,8 +21,8 @@ constructor(props) {
 	super(props);
 
 	this.state ={
-		dice:'',
-		currentRoll: ''
+		dice:[],
+		currentRoll: 
 	};
 	this.playSound = this.playSound.bind.this;
 	this.onPress = this.onPress.bind.this;
@@ -40,24 +40,35 @@ roll(dice){
 //radio buttons to select die
 
 
-//reulting roll display
+//resulting roll display
 
 
-function App() {
+render(){
   return (
    <div>
-     <button onclick={() =>
+     <div><button onclick={() =>
         this.setState(dice.dFour)}>Select Die</button>
+        </div>
+     <div>
       <button onclick={() =>
         this.setState(dice.dSix)}>Select Die</button>
+        </div>
+     <div>
       <button onclick={() =>
         this.setState(dice.dEight)}>Select Die</button>
+        </div>
+     <div>
       <button onclick={() =>
         this.setState(dice.dTen)}>Select Die</button>
+        </div>
+     <div>
       <button onclick={() =>
         this.setState(dice.dTwelve)}>Select Die</button>
+        </div>
+     <div>
       <button onclick={() =>
         this.setState(dice.dTwenty)}>Select Die</button>
+        </div>
    </div>
   );
 }

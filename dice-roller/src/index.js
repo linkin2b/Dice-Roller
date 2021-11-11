@@ -6,7 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-ReactDOM.render('./src/App.js');
+const el = document.getElementById('#dieRoll')
+
+ReactDOM.render(<DiceRoller />, el);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
