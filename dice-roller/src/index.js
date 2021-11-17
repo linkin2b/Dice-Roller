@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './src/index.css';
-import './src/App.js';
+import './App.css';
+import Roller from './App.js';
 import reportWebVitals from './reportWebVitals';
 
 
 
-const el = document.getElementById('#dieRoll')
+const el = document.getElementById('dieRoll')
 
-ReactDOM.render(<DiceRoller />, el);
+ReactDOM.render(<Roller />, el);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
