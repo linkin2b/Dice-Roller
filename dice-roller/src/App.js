@@ -48,38 +48,38 @@ class Roller extends React.Component {
 
         return (
             <div>
-                <div>{/* onclick and other events need to be camel cased in react */}
-                    <button onClick={() =>
+                <div id="dieTray">{/* onclick and other events need to be camel cased in react */}
+                    <button id="d4" onClick={() =>
                         this.setState({dice: dFour})}>Select Die
                     </button>{/* You want to set state to a specific dice array. State is an object with the properties "dice" and "currentRoll" */}
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="d6" onClick={() =>
                         this.setState({dice: dSix})}>Select Die
                     </button>
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="d8" onClick={() =>
                         this.setState({dice: dEight})}>Select Die
                     </button>
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="d10" onClick={() =>
                         this.setState({dice: dTen})}>Select Die
                     </button>
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="d12" onClick={() =>
                         this.setState({dice: dTwelve})}>Select Die
                     </button>
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="d20" onClick={() =>
                         this.setState({dice: dTwenty})}>Select Die
                     </button>
                 </div>
                 <div>
-                    <button onClick={() =>
+                    <button id="activate" onClick={() =>
                         this.roll(dice)}>Roll
                     </button>
                 </div>
