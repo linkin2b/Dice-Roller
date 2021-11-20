@@ -70,8 +70,7 @@ class Roller extends React.Component {
                 </div>
                 <div>
                     <button id="d12" onClick={() =>
-                        this.setState({dice: dTwelve})}>Select Die
-                    </button>
+                        this.setState({dice: dTwelve})}>    </button>
                 </div>
                 <div>
                     <button id="d20" onClick={() =>
@@ -83,7 +82,7 @@ class Roller extends React.Component {
                         this.roll(dice)}>Roll
                     </button>
                 </div>
-                <h2>{currentRoll}</h2>
+                <h2 id="rollDisplay">{currentRoll}</h2>
             </div>
         );
     }
