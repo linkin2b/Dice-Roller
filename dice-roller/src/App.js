@@ -13,6 +13,8 @@ const dEight = [1, 2, 3, 4, 5, 6, 7, 8];
 const dTen = [1, 2, 3 , 4, 5, 6, 7, 8, 9, 10];
 const dTwelve = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const dTwenty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15, 16, 17, 18, 19, 20];
+const dHundred = [...Array(100).keys()];
+const rollLog= [];
 
 class Roller extends React.Component {
 
@@ -20,9 +22,9 @@ class Roller extends React.Component {
         super(props);
 
         this.state = {
-            dice: dFour, // Sets an initial state
-            currentRoll: ''
-        };
+            dice: dHundred, // Sets an initial state
+            currentRoll: '',
+            };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
     };
@@ -34,11 +36,15 @@ class Roller extends React.Component {
         this.setState(() => {
             return {currentRoll: dice[Math.floor((Math.random() * dice.length))]}
         });
-    };
+        
+        };
+
+
+
 
 //html button to initiate roll
 
-//radio buttons to select die
+
 
 
 //resulting roll display
@@ -47,34 +53,41 @@ class Roller extends React.Component {
         const {dice, currentRoll} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
 
         return (
-            <div>
-                <div id="dieTray">{/* onclick and other events need to be camel cased in react */}
+            <div id="dieTray">
+                <div i>
                     <button id="d4" onClick={() =>
-                        this.setState({dice: dFour})}>Select Die
-                    </button>{/* You want to set state to a specific dice array. State is an object with the properties "dice" and "currentRoll" */}
+                        this.setState({dice: dFour})}>
+                    </button>
                 </div>
                 <div>
                     <button id="d6" onClick={() =>
-                        this.setState({dice: dSix})}>Select Die
+                        this.setState({dice: dSix})}>
+
                     </button>
                 </div>
                 <div>
                     <button id="d8" onClick={() =>
-                        this.setState({dice: dEight})}>Select Die
+                        this.setState({dice: dEight})}>
                     </button>
                 </div>
                 <div>
                     <button id="d10" onClick={() =>
-                        this.setState({dice: dTen})}>Select Die
+                        this.setState({dice: dTen})}>
                     </button>
                 </div>
                 <div>
                     <button id="d12" onClick={() =>
-                        this.setState({dice: dTwelve})}>    </button>
+                        this.setState({dice: dTwelve})}> 
+                    </button>
                 </div>
                 <div>
                     <button id="d20" onClick={() =>
-                        this.setState({dice: dTwenty})}>Select Die
+                        this.setState({dice: dTwenty})}>
+                    </button>
+                </div>
+                <div>
+                    <button id="d100" onClick={() =>
+                        this.setState({dice: dHundred})}>
                     </button>
                 </div>
                 <div>
@@ -83,6 +96,9 @@ class Roller extends React.Component {
                     </button>
                 </div>
                 <h2 id="rollDisplay">{currentRoll}</h2>
+                <div>
+                    <ul>{rollLog}</ul>
+                </div>
             </div>
         );
     }
