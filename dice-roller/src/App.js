@@ -14,7 +14,8 @@ const dTen = [1, 2, 3 , 4, 5, 6, 7, 8, 9, 10];
 const dTwelve = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const dTwenty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15, 16, 17, 18, 19, 20];
 const dHundred = [...Array(100).keys()];
-const rollLog= [];
+
+
 
 class Roller extends React.Component {
 
@@ -24,6 +25,7 @@ class Roller extends React.Component {
         this.state = {
             dice: dHundred, // Sets an initial state
             currentRoll: '',
+            rollLog: []
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
@@ -33,14 +35,24 @@ class Roller extends React.Component {
 //random roll withing die parameters
 
     roll(dice) {
+        var rolled = dice[Math.floor((Math.random() * dice.length))]
         this.setState(() => {
-            return {currentRoll: dice[Math.floor((Math.random() * dice.length))]}
+            return {currentRoll: rolled}
+        }); 
+        this.setState(() => {
+            return {rollLog: [ ...this.state.rollLog] + [rolled]};
         });
-        
+        console.log(this.state.rollLog);
         };
 
 
+//clear roll log
 
+    clear(rollLog) {
+        this.setState(() => {
+            return {rollLog: []};
+        })
+    }
 
 //html button to initiate roll
 
@@ -50,11 +62,12 @@ class Roller extends React.Component {
 //resulting roll display
 
     render() {
-        const {dice, currentRoll} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
+        const {dice, currentRoll, rollLog} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
 
         return (
-            <div id="dieTray">
-                <div i>
+            <div >
+                <div id="dieTray">
+                <div>
                     <button id="d4" onClick={() =>
                         this.setState({dice: dFour})}>
                     </button>
@@ -95,11 +108,20 @@ class Roller extends React.Component {
                         this.roll(dice)}>Roll
                     </button>
                 </div>
-                <h2 id="rollDisplay">{currentRoll}</h2>
                 <div>
-                    <ul>{rollLog}</ul>
+                    <button id="clear" onClick={() =>
+                        this.clear(rollLog)}>clear
+                    </button>
                 </div>
-            </div>
+                </div>
+                <div>
+               <h2 id="rollDisplay">{currentRoll}</h2>
+         
+                <p id="rollRecord">{rollLog}</p>
+              
+                </div> 
+            </div>   
+               
         );
     }
 }

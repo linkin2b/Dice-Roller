@@ -5,26 +5,43 @@ body{
 }
 
 #dieTray{
-    background-color: rgba(0, 0, 255, 0.315);
+    background-color: rgba(255, 115, 0, 0);
     border: chartreuse;
     border-width: 12px;
-    display: inline-block;
-    
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
 }
+
 #rollDisplay{
     border: 10px;
-    background-color: blanchedalmond;
+    font: 4em sans-serif;
+    background-color: rgb(224, 154, 48);
+    position: absolute;
+    top:50%;
+    right: 50%;
 }
+#rollRecord{
+    background-color: blanchedalmond;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 20%;
+}
+
 #d12{
  background-image: url('../src/imgs/d12.png');
  background-repeat: no-repeat;
  background-size: contain;
- background-color: rgba(255, 235, 205, 0.068);
+ background-color:rgba(255, 99, 71, 0);
  width: 100px;
  height: 100px;
  border-color: rgba(95, 158, 160, 0);
  border-radius: 100%;
+}
+#d12:focus {
+    background-color: chartreuse;
 }
 #d4{
     background-image: url('../src/imgs/d4.png');
@@ -36,16 +53,23 @@ body{
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
+   #d4:focus {
+    background-color: chartreuse;
+}
    #d6{
     background-image: url('../src/imgs/d6.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: rgba(255, 235, 205, 0.068);
+    background-color: rgba(255, 235, 205, 0);
     width: 100px;
     height: 100px;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }  
+   #d6:focus {
+    background-color: chartreuse;
+}
+
    #d8{
     background-image: url('../src/imgs/d8.png');
     background-repeat: no-repeat;
@@ -55,7 +79,10 @@ body{
     height: 100px;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
-   }
+   }  
+    #d8:focus {
+    background-color: chartreuse;
+}
    #d10{
     background-image: url('../src/imgs/d10.png');
     background-repeat: no-repeat;
@@ -66,6 +93,9 @@ body{
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
+   #d10:focus {
+    background-color: chartreuse;
+}
    #d20{
     background-image: url('../src/imgs/d20.png');
     background-repeat: no-repeat;
@@ -76,6 +106,9 @@ body{
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
+   #d20:focus {
+    background-color: chartreuse;
+}
    #d100{
     background-image: url('../src/imgs/d100.png');
     background-repeat: no-repeat;
@@ -86,3 +119,13 @@ body{
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
+   #d100:focus {
+    background-color: chartreuse;
+}
+
+button{
+    display: inline-block;
+   
+  
+
+}
