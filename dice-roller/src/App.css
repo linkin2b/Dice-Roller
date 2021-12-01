@@ -15,21 +15,31 @@ body{
 }
 
 #rollDisplay{
-    border: 10px;
+    border:solid black;
+    border-width: 1px;
+    width: 5rem;
+    height: 5rem;
     font: 4em sans-serif;
-    background-color: rgb(224, 154, 48);
+    background-color: rgba(131, 118, 100, 0.664);
     position: absolute;
     top:50%;
     right: 50%;
+    text-align: center;
 }
 #rollRecord{
     background-color: blanchedalmond;
-    position: absolute;
+    position:absolute;
     display: inline-block;
-    top: 50%;
+    width: 10rem;
+    height:20rem;
+    top: 28.5%;
     right: 20%;
+    text-align: right;
+    list-style-type:none;
+    overflow:scroll;
+    overflow-x: hidden;
+    overflow-y:initial;
 }
-
 #d12{
  background-image: url('../src/imgs/d12.png');
  background-repeat: no-repeat;
