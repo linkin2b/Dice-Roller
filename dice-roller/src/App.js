@@ -25,7 +25,8 @@ class Roller extends React.Component {
         this.state = {
             dice: dHundred, // Sets an initial state
             currentRoll: '',
-            rollLog: []
+            rollLog: [],
+            diceImg: []
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
@@ -40,9 +41,10 @@ class Roller extends React.Component {
             return {currentRoll: rolled}
         }); 
         this.setState(() => {
-            return {rollLog: [ ...this.state.rollLog] + [rolled]};
+            return {rollLog: [ ...this.state.rollLog, rolled]}; 
+          
         });
-        console.log(this.state.rollLog);
+         console.log(this.state.rollLog, rolled);
         };
 
 
@@ -50,11 +52,9 @@ class Roller extends React.Component {
 
     clear(rollLog) {
         this.setState(() => {
-            return {rollLog: []};
+            return {rollLog: [], currentRoll: ''};
         })
     }
-
-//html button to initiate roll
 
 
 
@@ -69,7 +69,7 @@ class Roller extends React.Component {
                 <div id="dieTray">
                 <div>
                     <button id="d4" onClick={() =>
-                        this.setState({dice: dFour})}>
+                        this.setState({dice: dFour, diceImg:'./src/imgs/d4.png'})}>
                     </button>
                 </div>
                 <div>
@@ -117,7 +117,11 @@ class Roller extends React.Component {
                 <div>
                <h2 id="rollDisplay">{currentRoll}</h2>
          
-                <p id="rollRecord">{rollLog}</p>
+                <ul id="rollRecord">
+                    {rollLog.map(i => (
+                   <li>{i}</li>
+                  ))}
+                </ul>
               
                 </div> 
             </div>   
