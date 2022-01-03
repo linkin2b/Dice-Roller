@@ -23,10 +23,10 @@ class Roller extends React.Component {
         super(props);
 
         this.state = {
-            dice: dHundred, // Sets an initial state
+            dice: dTwenty, // Sets an initial state
             currentRoll: '',
             rollLog: [],
-            diceImg: []
+            diceImg: '../src/imgs/d20.png'
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
@@ -56,7 +56,23 @@ class Roller extends React.Component {
         })
     }
 
-
+//dice img
+getDiceImage(dice){
+    if (this.state.dice === dFour)
+    return "../src/imgs/d4.png";
+    if (this.state.dice === dSix)
+    return "../src/imgs/d6.png";
+    if (this.state.dice === dEight)
+    return "./src/imgs/d8.png";
+    if (this.state.dice === dTen)
+    return "./src/imgs/d10.png";
+    if (this.state.dice === dTwelve)
+    return "./src/imgs/d12.png";    
+    if (this.state.dice === dTwenty)
+    return "./src/imgs/d20.png";
+    if (this.state.dice === dHundred)
+    return "./src/imgs/d100.png";
+}
 
 
 //resulting roll display
@@ -103,24 +119,28 @@ class Roller extends React.Component {
                         this.setState({dice: dHundred})}>
                     </button>
                 </div>
+                </div>
                 <div>
-                    <button id="activate" onClick={() =>
+                <div>
+                    <button id="rollbtn" class="roll" onClick={() =>
                         this.roll(dice)}>Roll
                     </button>
                 </div>
                 <div>
-                    <button id="clear" onClick={() =>
+                    <button id="clearbtn" class ="clear"onClick={() =>
                         this.clear(rollLog)}>clear
                     </button>
                 </div>
                 </div>
-                <div>
+                <div class="box"> 
+                
                <h2 id="rollDisplay">{currentRoll}</h2>
          
-                <ul id="rollRecord">
-                    {rollLog.map(i => (
-                   <li>{i}</li>
-                  ))}
+                <ul id="rollRecord" class="container">
+                    {rollLog.slice(0).reverse().map(i => (
+                   <li id="card">{i}</li>
+                   
+                  ))}<h2 id="rollDie"> {this.getDiceImg}</h2>
                 </ul>
               
                 </div> 
