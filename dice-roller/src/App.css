@@ -1,33 +1,37 @@
 body{
-    background: rgba(245, 111, 111, 0.603);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 200;
+    background: rgba(87, 84, 84, 0.856);
+    background-image: url("./imgs/mainbg.jpg");
+   
 }
 
 #dieTray{
-    background-color: rgba(255, 115, 0, 0);
+    background-color: rgba(255, 115, 0, 0.349);
     border: chartreuse;
     border-width: 12px;
     position: absolute;
     bottom: 0;
     left: 0;
-
+    border:thick solid black;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    
 }
 
 #rollDisplay{
-    border:solid black;
-    border-width: 1px;
+    border:thick solid black;
     width: 5rem;
     height: 5rem;
     font: 4em sans-serif;
-    background-color: rgba(131, 118, 100, 0.664);
+    background-color: rgba(109, 51, 17, 0.877);
     position: absolute;
     top:50%;
     right: 50%;
     text-align: center;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    
 }
 #rollRecord{
-    background-color: blanchedalmond;
+    background-image: url("../src/imgs/trayBG.jpg");
+    background-size: 10rem 20rem;
     position:absolute;
     display: flex;
     width: 10rem;
@@ -40,6 +44,12 @@ body{
     overflow-x: hidden;
     overflow-y:initial;
     flex-direction: column-reverse;
+    border:thick solid rgb(0, 0, 0);
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    font: 3em ;
+    color:rgb(250, 250, 250);
+    
+    
     
 }
 #d12{
@@ -145,6 +155,7 @@ body{
     top: 40px;
     left: 100px;
     position:relative;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
 }
 #rollbtn{
     background-color: green;
@@ -155,6 +166,7 @@ body{
     padding: 10px;
     top: 40px;
     position: relative;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
 }
 .box{
     background-color: yellow;
