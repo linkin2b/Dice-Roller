@@ -46,11 +46,19 @@ body{
     flex-direction: column-reverse;
     border:thick solid rgb(0, 0, 0);
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
-    font: 3em ;
-    color:rgb(250, 250, 250);
+    font: 4em ;
+    color:rgb(241, 224, 224);
     
     
     
+}
+
+#card{
+    font: 200;
+    border: thin solid black;
+    background-color: rgba(122, 83, 24, 0.658);
+    margin: 5px;
+    text-align: left;
 }
 #d12{
  background-image: url('../src/imgs/d12.png');
@@ -172,8 +180,4 @@ body{
     background-color: yellow;
     display: flex;
     flex-direction: column;
-}
-#card{
-    font: 200;
-    border: 10px black;
 }
