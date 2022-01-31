@@ -26,7 +26,8 @@ class Roller extends React.Component {
             dice: dTwenty, // Sets an initial state
             currentRoll: '',
             rollLog: [],
-            diceImg: '../src/imgs/d20.png'
+            diceImg: '../src/imgs/d20.png',
+            multiple: []
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
@@ -36,7 +37,9 @@ class Roller extends React.Component {
 //random roll withing die parameters
 
     roll(dice) {
-        var rolled = dice[Math.floor((Math.random() * dice.length))]
+             var rolled = dice[Math.floor((Math.random() * dice.length))]
+             
+       
         this.setState(() => {
             return {currentRoll: rolled}
         }); 
@@ -46,6 +49,14 @@ class Roller extends React.Component {
         });
          console.log(this.state.rollLog, rolled);
         };
+
+//dice multiplier
+multiplier(times){
+    let amount = 0
+    if(this.state.dice === this.state.dice){
+        return amount= (amount+1);
+    } return this.setstate.multiple(times);
+}
 
 
 //clear roll log
@@ -138,9 +149,11 @@ getDiceImage(dice){
          
                 <ul id="rollRecord" class="container">
                     {rollLog.slice(0).reverse().map(i => (
-                   <li id="card">{i}</li>
-                   
-                  ))}<h2 id="rollDie"> {this.getDiceImg}</h2>
+                    <div class=""> 
+                    
+                   <li id="card">{i}  <img src={this.state.diceImg}></img></li>
+                     </div>                   
+                  ))}
                 </ul>
               
                 </div> 
