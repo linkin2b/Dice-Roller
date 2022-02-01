@@ -27,9 +27,9 @@ class Roller extends React.Component {
             dice: dTwenty, // Sets an initial state
             currentRoll: '',
             rollLog: [],
-            diceImg: '../src/imgs/d20.png',
+            diceImg: "../src/imgs/d20.png",
             totalRoll: [] ,
-            sumRoll: 0
+            sumRoll: 69
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
@@ -62,14 +62,17 @@ totalRoll(totalRoll){
 
 //totalRoll addition
 
-sumRoll(sumRoll){
-    let totalRoll = this.state.totalRoll;
-    var sumRoll = 0;
-    for( var i = 0; i<= totalRoll.length; i++ ) {
-        sumRoll += i;
+sumRoll () {
+    const { totalRoll } = this.state;
+    let sumRoll = 0;
+
+    for( let i = 0; i < totalRoll.length; i++ ) {
+        sumRoll += totalRoll[i];
     }
-    return (this.setState.sumRoll);
-    
+
+    this.setState(() => {
+        return {sumRoll: sumRoll};
+    });    
 }
 
  
@@ -99,6 +102,14 @@ getDiceImage(dice){
     return "./src/imgs/d100.png";
 }
 
+//onChange dice img
+handleChange(e){
+    const diceImg= e.target.getAttribute("diceImg")
+    this.setState({
+        diceImg: (e.target)
+    })
+}
+
 
 //resulting roll display
 
@@ -107,10 +118,10 @@ getDiceImage(dice){
 
         return (
             <div >
-                <div id="dieTray">
+                <div id="dieTray" onChange={this.handleChange}>
                 <div>
                     <button id="d4" onClick={() =>
-                        this.setState({dice: dFour, diceImg:'./src/imgs/d4.png'})}>
+                        this.setState({dice: dFour})}>
                     </button>
                 </div>
                 <div>
@@ -165,7 +176,7 @@ getDiceImage(dice){
                     {rollLog.slice(0).reverse().map(i => (
                     <div class=""> 
                     
-                   <li id="card">{i} ,{sumRoll} <img src={this.state.diceImg}></img></li>
+                   <li id="card">{i} ,{sumRoll}<br/> <img src={this.state.diceImg}></img></li>
                      </div>                   
                   ))}
                 </ul>
