@@ -1,4 +1,5 @@
 import React from "react";
+import { Simulate } from "react-dom/test-utils";
 import './App.css';
 
 //establish die paramenters
@@ -27,19 +28,19 @@ class Roller extends React.Component {
             currentRoll: '',
             rollLog: [],
             diceImg: '../src/imgs/d20.png',
-            multiple: []
+            totalRoll: [] ,
+            sumRoll: 0
             };
         // this.playSound = this.playSound.bind.this;
         // this.onPress = this.onPress.bind.this;
     };
 
-
+   
 //random roll withing die parameters
 
     roll(dice) {
-             var rolled = dice[Math.floor((Math.random() * dice.length))]
-             
-       
+        var rolled = dice[Math.floor((Math.random() * dice.length))]
+
         this.setState(() => {
             return {currentRoll: rolled}
         }); 
@@ -51,19 +52,32 @@ class Roller extends React.Component {
         };
 
 //dice multiplier
-multiplier(times){
-    let amount = 0
-    if(this.state.dice === this.state.dice){
-        return amount= (amount+1);
-    } return this.setstate.multiple(times);
+totalRoll(totalRoll){
+    
+    this.setState(() => {
+        return {totalRoll: [...totalRoll, this.state.currentRoll]};
+    });
+    
+};
+
+//totalRoll addition
+
+sumRoll(sumRoll){
+    let totalRoll = this.state.totalRoll;
+    var sumRoll = 0;
+    for( var i = 0; i<= totalRoll.length; i++ ) {
+        sumRoll += i;
+    }
+    return (this.setState.sumRoll);
+    
 }
 
-
+ 
 //clear roll log
 
     clear(rollLog) {
         this.setState(() => {
-            return {rollLog: [], currentRoll: ''};
+            return {rollLog: [], currentRoll: '', totalRoll: 0};
         })
     }
 
@@ -89,7 +103,7 @@ getDiceImage(dice){
 //resulting roll display
 
     render() {
-        const {dice, currentRoll, rollLog} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
+        const {dice, currentRoll, rollLog, sumRoll} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
 
         return (
             <div >
@@ -151,7 +165,7 @@ getDiceImage(dice){
                     {rollLog.slice(0).reverse().map(i => (
                     <div class=""> 
                     
-                   <li id="card">{i}  <img src={this.state.diceImg}></img></li>
+                   <li id="card">{i} ,{sumRoll} <img src={this.state.diceImg}></img></li>
                      </div>                   
                   ))}
                 </ul>
