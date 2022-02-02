@@ -62,17 +62,17 @@ totalRoll(totalRoll){
 
 //totalRoll addition
 
-sumRoll(sumRoll){
-    let totalRoll = this.state.totalRoll;
-    var sumRoll = 0;
-    for( var i = 0; i<= totalRoll.length; i++ ) {
-        sumRoll += i;
+sumRoll() {
+    const totalRoll = this.state;
+    let sumRoll = 0;
+    for( let i = 0; i< totalRoll.length; i++ ) {
+        sumRoll += totalRoll[i];
     }
-    return (this.setState.sumRoll);
-    
+    this.setState(() => {
+        return {sumRoll: sumRoll};
+    });
 }
 
- 
 //clear roll log
 
     clear(rollLog) {
