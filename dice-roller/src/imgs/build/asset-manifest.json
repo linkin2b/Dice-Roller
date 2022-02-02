@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31d1db8c.chunk.css",
+    "main.js": "/static/js/main.b7c74d9c.chunk.js",
+    "main.js.map": "/static/js/main.b7c74d9c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d03acfde.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d03acfde.js.map",
+    "static/js/2.87b6ae76.chunk.js": "/static/js/2.87b6ae76.chunk.js",
+    "static/js/2.87b6ae76.chunk.js.map": "/static/js/2.87b6ae76.chunk.js.map",
+    "static/js/3.9b3f703b.chunk.js": "/static/js/3.9b3f703b.chunk.js",
+    "static/js/3.9b3f703b.chunk.js.map": "/static/js/3.9b3f703b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.31d1db8c.chunk.css.map": "/static/css/main.31d1db8c.chunk.css.map",
+    "static/js/2.87b6ae76.chunk.js.LICENSE.txt": "/static/js/2.87b6ae76.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/trayBG.449370f6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d03acfde.js",
+    "static/js/2.87b6ae76.chunk.js",
+    "static/css/main.31d1db8c.chunk.css",
+    "static/js/main.b7c74d9c.chunk.js"
+  ]
+}
