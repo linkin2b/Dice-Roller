@@ -110,7 +110,7 @@ getDiceImage(dice){
                 <div id="dieTray">
                 <div>
                     <button id="d4" onClick={() =>
-                        this.setState({dice: dFour, diceImg:'./src/imgs/d4.png'})}>
+                        this.setState({dice: dFour})}>
                     </button>
                 </div>
                 <div>
