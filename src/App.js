@@ -1,5 +1,4 @@
 import React from "react";
-import { Simulate } from "react-dom/test-utils";
 import './App.css';
 
 //establish die paramenters
@@ -31,8 +30,6 @@ class Roller extends React.Component {
             totalRoll: [] ,
             sumRoll: 69
             };
-        // this.playSound = this.playSound.bind.this;
-        // this.onPress = this.onPress.bind.this;
     };
 
    
@@ -52,25 +49,21 @@ class Roller extends React.Component {
         };
 
 //dice multiplier
-totalRoll(totalRoll){
-    
-    this.setState(() => {
-        return {totalRoll: [...totalRoll, this.state.currentRoll]};
-    });
-    
-};
+
 
 //totalRoll addition
 
-sumRoll() {
-    const totalRoll = this.state;
+sumRoll () {
+    const { totalRoll } = this.state;
     let sumRoll = 0;
-    for( let i = 0; i< totalRoll.length; i++ ) {
-        sumRoll += totalRoll[i];
+
+    for( let i = 0; i < totalRoll.length; i++ ) {
+       sumRoll += totalRoll[i];
     }
+
     this.setState(() => {
         return {sumRoll: sumRoll};
-    });
+    });    
 }
 
 //clear roll log
@@ -99,14 +92,6 @@ getDiceImage(dice){
     return "./src/imgs/d100.png";
 }
 
-//onChange dice img
-handleChange(e){
-    const diceImg= e.target.getAttribute("diceImg")
-    this.setState({
-        diceImg: (e.target)
-    })
-}
-
 
 //resulting roll display
 
@@ -114,36 +99,36 @@ handleChange(e){
         const {dice, currentRoll, rollLog, sumRoll} = this.state; // You want to destructure dice and currentRoll from state so you can use it in your render method
 
         return (
-            <div >
+            <div>
                 <div id="dieTray" onChange={this.handleChange}>
                 <div>
                     <button id="d4" onClick={() =>
-                        this.setState({dice: dFour})}>
+                        this.setState({dice: dFour, diceImg:"../src/imgs/d4.png"})}>
                     </button>
                 </div>
                 <div>
-                    <button id="d6" onClick={() =>
+                    <button  id="d6" onClick={() =>
                         this.setState({dice: dSix})}>
 
                     </button>
                 </div>
                 <div>
-                    <button id="d8" onClick={() =>
+                    <button  id="d8" onClick={() =>
                         this.setState({dice: dEight})}>
                     </button>
                 </div>
                 <div>
-                    <button id="d10" onClick={() =>
+                    <button  id="d10" onClick={() =>
                         this.setState({dice: dTen})}>
                     </button>
                 </div>
                 <div>
-                    <button id="d12" onClick={() =>
+                    <button  id="d12" onClick={() =>
                         this.setState({dice: dTwelve})}> 
                     </button>
                 </div>
                 <div>
-                    <button id="d20" onClick={() =>
+                    <button  id="d20" onClick={() =>
                         this.setState({dice: dTwenty})}>
                     </button>
                 </div>
@@ -155,7 +140,7 @@ handleChange(e){
                 </div>
                 <div>
                 <div>
-                    <button id="rollbtn" class="roll" onClick={() =>
+                    <button  id="rollbtn" class="roll" onClick={() =>
                         this.roll(dice)}>Roll
                     </button>
                 </div>
@@ -166,14 +151,15 @@ handleChange(e){
                 </div>
                 </div>
                 <div class="box"> 
-                
-               <h2 id="rollDisplay">{currentRoll}</h2>
+               <h1 id="sumRoll" alt="Total Of Rolls">{sumRoll} Total</h1> 
+               <h2 id="rollDisplay">{currentRoll}  <br/> Current</h2>
+
          
                 <ul id="rollRecord" class="container">
                     {rollLog.slice(0).reverse().map(i => (
                     <div class=""> 
                     
-                   <li id="card">{i} ,{sumRoll}<br/> <img src={this.state.diceImg}></img></li>
+                   <li id="card">{i}<br/> <img src={this.state.diceImg}></img></li>
                      </div>                   
                   ))}
                 </ul>
