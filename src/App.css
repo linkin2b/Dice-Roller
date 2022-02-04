@@ -1,7 +1,8 @@
 body{
     background: rgba(87, 84, 84, 0.856);
     background-image: url("./imgs/mainbg.jpg");
-   
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
 }
 
 #dieTray{
@@ -26,8 +27,22 @@ body{
     right: 50%;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    border-radius: 5px;    
+    font-family: inherit;
+}
+#sumRoll{
+    border:thick solid black;
+    width: 5rem;
+    height: 5rem;
+    font: 4em sans-serif;
+    background-color: rgba(255, 115, 0, 0.349);
+    position: absolute;
+    top: 65vh;
+    right: 50vw;
+    text-align: center;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;
-    
+    font-family:inherit; 
 }
 #rollRecord{
     background-image: url("../src/imgs/trayBG.jpg");
@@ -36,8 +51,8 @@ body{
     display: flex;
     width: 10rem;
     height:20rem;
-    top: 28.5%;
-    right: 20%;
+    top: 20vh;
+    right: 10vw;
     text-align: right;
     list-style-type:none;
     overflow:scroll;
@@ -171,7 +186,7 @@ body{
 }
 #rollbtn{
     background-color: rgba(255, 115, 0, 0.349);
-    color:;
+    color:slategrey;
     width: 100px;
     height: 100px;
     border-radius: 5px;
@@ -185,4 +200,8 @@ body{
     background-color: yellow;
     display: flex;
     flex-direction: column;
+}
+@font-face {
+    font-family: 'Bebas Neue', cursive;
+    src: local(Bebas Neue) url(./fonts/BebasNeue-Regular.ttf) format(truetype);
 }
