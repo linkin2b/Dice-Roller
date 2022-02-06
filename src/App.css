@@ -45,7 +45,7 @@ body{
     font-family:inherit; 
 }
 #rollRecord{
-    background-image: url("/src/imgs/trayBG.jpg");
+    background-image: url("/src/imgs/trayBG.jfif");
     background-size: 10rem 20rem;
     position:absolute;
     display: flex;
