@@ -90,60 +90,60 @@ class Roller extends React.Component {
         <div>
           <div id="dieTray" onChange={this.handleChange}>
             <div>
-              <button id="d4" onClick={() =>
+              <button id="d4" title="D4" onClick={() =>
                   this.setState({dice: dFour, diceImg:d4})}>
               </button>
             </div>
             <div>
-              <button id="d6" onClick={() =>
+              <button id="d6" title="D6" onClick={() =>
                   this.setState({dice: dSix, diceImg:d6})}>
 
               </button>
             </div>
             <div>
-              <button id="d8" onClick={() =>
+              <button id="d8" title="D8" onClick={() =>
                   this.setState({dice: dEight, diceImg:d8})}>
               </button>
             </div>
             <div>
-              <button id="d10" onClick={() =>
+              <button id="d10" title="D10" onClick={() =>
                   this.setState({dice: dTen, diceImg:d10})}>
               </button>
             </div>
             <div>
-              <button id="d12" onClick={() =>
+              <button id="d12" title="D12" onClick={() =>
                   this.setState({dice: dTwelve, diceImg:d12})}>
               </button>
             </div>
             <div>
-              <button id="d20" onClick={() =>
+              <button id="d20" title="D20" onClick={() =>
                   this.setState({dice: dTwenty, diceImg:d20})}>
               </button>
             </div>
             <div>
-              <button id="d100" onClick={() =>
+              <button id="d100" title="D100" onClick={() =>
                   this.setState({dice: dHundred, diceImg:d100})}>
               </button>
             </div>
           </div>
           <div>
             <div>
-              <button id="rollbtn" className="roll" onClick={() =>
+              <button id="rollbtn" title="Roll" className="roll" onClick={() =>
                   this.roll(dice)}>Roll
               </button>
             </div>
             <div>
-              <button id="clearbtn" className="clear" onClick={() =>
+              <button id="clearbtn" title="Clear" className="clear" onClick={() =>
                   this.clear(rollLog)}>clear
               </button>
             </div>
           </div>
           <div className="box">
-            <h1 id="sumRoll" alt="Total Of Rolls">{sumRoll} Total</h1>
-            <h2 id="rollDisplay">{currentRoll} <br/> Current</h2>
+            <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll} </h1>
+            <h2 id="rollDisplay" title="Current Roll" >{currentRoll} <br/> </h2>
 
 
-            <ul id="rollRecord" className="container">
+            <ul id="rollRecord" title="Rolls Made" className="container">
               {rollLog.slice(0).reverse().map((i, index) => (
                     <div className="" key={i*index}>
                       <li id="card">{i.rolled}<br/>
