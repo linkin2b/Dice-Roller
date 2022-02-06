@@ -1,6 +1,6 @@
 body{
     background: rgba(87, 84, 84, 0.856);
-    background-image: url("./imgs/mainbg.jpg");
+    background-image: url("/src/imgs/mainbg.jpg");
     cursor: pointer;
     font-family: 'Bebas Neue', cursive;
 }
@@ -45,7 +45,7 @@ body{
     font-family:inherit; 
 }
 #rollRecord{
-    background-image: url("../src/imgs/trayBG.jpg");
+    background-image: url("/src/imgs/trayBG.jpg");
     background-size: 10rem 20rem;
     position:absolute;
     display: flex;
@@ -80,7 +80,7 @@ body{
     border-radius: 12%;
 }
 #d12{
- background-image: url('../src/imgs/d12.png');
+ background-image: url('/src/imgs/d12.png');
  background-repeat: no-repeat;
  background-size: contain;
  background-color:rgba(255, 99, 71, 0);
@@ -93,7 +93,7 @@ body{
     background-color: chartreuse;
 }
 #d4{
-    background-image: url('../src/imgs/d4.png');
+    background-image: url('/src/imgs/d4.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0);
@@ -106,7 +106,7 @@ body{
     background-color: chartreuse;
 }
    #d6{
-    background-image: url('../src/imgs/d6.png');
+    background-image: url('/src/imgs/d6.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0);
@@ -120,7 +120,7 @@ body{
 }
 
    #d8{
-    background-image: url('../src/imgs/d8.png');
+    background-image: url('/src/imgs/d8.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
@@ -133,7 +133,7 @@ body{
     background-color: chartreuse;
 }
    #d10{
-    background-image: url('../src/imgs/d10.png');
+    background-image: url('/src/imgs/d10.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
@@ -146,7 +146,7 @@ body{
     background-color: chartreuse;
 }
    #d20{
-    background-image: url('../src/imgs/d20.png');
+    background-image: url('/src/imgs/d20.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
@@ -159,7 +159,7 @@ body{
     background-color: chartreuse;
 }
    #d100{
-    background-image: url('../src/imgs/d100.png');
+    background-image: url('/src/imgs/d100.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
