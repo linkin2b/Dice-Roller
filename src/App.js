@@ -42,15 +42,31 @@ class Roller extends React.Component {
     this.setState(() => {
       return {
         currentRoll: rolled,
-        rollLog: [...rollLog, {rolled, diceRolled: dice}], // Use an object for each item in rollRog. That way you can track which kind of die was rolled and use that to display the proper image. See how it's being used below
-        sumRoll: sumRoll + rolled // Just add the rolled to the current state of sumRoll and use that to update sumRoll state
+        rollLog: [...rollLog, {rolled, diceRolled: dice}], 
+        sumRoll: sumRoll + rolled 
       };
 
     });
     console.log(rollLog);
   };
 
-//dice multiplier
+//advantage roll
+advRoll(dice) {
+  let x = dice[Math.floor((Math.random() * dice.length))]
+  let y = dice[Math.floor((Math.random() * dice.length))]
+
+return Math.max(x,y);
+}
+
+
+//disadvantage roll
+disRoll(dice) {
+  let x = dice[Math.floor((Math.random() * dice.length))]
+  let y = dice[Math.floor((Math.random() * dice.length))]
+
+return Math.min(x,y);
+
+}
 
 
 //clear roll log
@@ -133,24 +149,31 @@ class Roller extends React.Component {
               </button>
             </div>
             <div>
+              <button id="advan" title="Advantage" onClick={() =>
+              this.advRoll(dice)}>Advantage</button>
+              <button id="disadvan" title="Disadvantage" onClick={() =>
+              this.disRoll(dice)}>Disadvantage</button>
+            </div>
+            <div>
               <button id="clearbtn" title="Clear" className="clear" onClick={() =>
                   this.clear(rollLog)}>clear
               </button>
             </div>
           </div>
-          <div className="box">
-            <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll} </h1>
-            <h2 id="rollDisplay" title="Current Roll" >{currentRoll} <br/> </h2>
 
+          <div className="box" id="rollBox">
+            <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll} </h1>
+            <h1 id="rollDisplay" title="Current Roll" >{currentRoll} </h1>
+          
 
             <ul id="rollRecord" title="Rolls Made" className="container">
               {rollLog.slice(0).reverse().map((i, index) => (
                     <div className="" key={i*index}>
                       <li id="card">{i.rolled}<br/>
-                        <img style={{maxWidth: 28}} src={this.getDiceImage(i.diceRolled)}/>
-                      </li>
+                        <img style={{maxWidth: 28}} src={this.getDiceImage(i.diceRolled)}/>  
+                        </li>
                     </div>
-                ))
+                    ))
               }
             </ul>
 

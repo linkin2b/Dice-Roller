@@ -18,28 +18,42 @@ body{
 
 #rollDisplay{
     border:thick solid black;
-    width: 1.2em;
-    height: 1.2em;
-    font: 4em sans-serif;
+    width: 6vh;
+    height: 6vh;
+    font: 5vh sans-serif;
     background-color: rgba(255, 115, 0, 0.349);
     position: absolute;
-    top:50%;
+    top: 50vh;
     right: 2em;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;    
     font-family: inherit;
     overflow: hidden;
+    padding-right: 1vw;
 }
 #sumRoll{
     border:thick solid black;
+    width: 6vh;
+    height: 6vh;
+    font: 5vh sans-serif;
+    background-color: rgba(255, 115, 0, 0.349);
+    position: absolute;
+    top: 50vh;
+    right: 1vw;
+    text-align: center;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    border-radius: 5px;    
+    font-family: inherit;
+    overflow: hidden;
+}
+#current{
     width: 1.2em;
     height: 1.2em;
     font: 4em sans-serif;
-    background-color: rgba(255, 115, 0, 0.349);
     position: absolute;
-    top: 65vh;
-    right: 2em;
+    top: 49vh;
+    right: 4em;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;
@@ -53,7 +67,7 @@ body{
     width: 20vmax;
     height:30vmax;
     top: 20vh;
-    right: 10vw;
+    left: 35vw;
     text-align: right;
     list-style-type:none;
     overflow:scroll;
@@ -65,10 +79,6 @@ body{
     font: 4em ;
     color:rgb(241, 224, 224);
     border-radius: 5px;
-    
-    
-    
-    
 }
 
 #card{
@@ -198,6 +208,29 @@ body{
     bottom: 3%;
     right: 1em;
     position: absolute;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+}
+
+#advan{
+    background-color: rgba(42, 119, 61, 0.527);
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    right: 10em;
+    bottom: 11em;
+    position:absolute;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    }
+#disadvan{
+    background-color: rgba(138, 66, 54, 0.527);
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    right: 1em;
+    bottom: 11em;
+    position:absolute;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
 }
 .box{
