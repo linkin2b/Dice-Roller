@@ -36,21 +36,26 @@ class Roller extends React.Component {
 //random roll withing die parameters
 
   roll(dice) {
+    
     const {sumRoll, rollLog} = this.state
     var rolled = dice[Math.floor((Math.random() * dice.length))]
+    console.log(rolled);
+    
     if(document.getElementById('plusFive').checked){
       rolled= rolled + 5;
-    }else if(document.getElementById('plusTwo').checked){
+    } if(document.getElementById('plusTwo').checked){
       rolled= rolled +2;
-    }else if (document.getElementById('plusOne').checked) {
+    } if (document.getElementById('plusOne').checked) {
       rolled = rolled +1;
-    }else if(document.getElementById('minusOne').checked){
+    } if(document.getElementById('minusOne').checked){
       rolled= rolled - 1;
-    } else if(document.getElementById('minusTwo').checked){
+    } if(document.getElementById('minusTwo').checked){
       rolled= rolled - 2;
-    }else if (document.getElementById('minusFive').checked){
+    } if (document.getElementById('minusFive').checked){
       rolled = rolled - 5;
     }
+    ;
+console.log(rolled);
     this.setState(() => {
       return {
         currentRoll: rolled,
@@ -60,7 +65,7 @@ class Roller extends React.Component {
       
 
     });
-  };
+  }
 
 //advantage roll
 advRoll(dice) {
@@ -72,7 +77,7 @@ advRoll(dice) {
   this.setState(() => {
     return {
       currentRoll: highRoll,
-      rollLog: [...rollLog, {highRoll, diceRolled: dice}],
+      rollLog: [...rollLog, {rolled: highRoll, diceRolled: dice}],
       sumRoll: sumRoll + highRoll
     };
     
@@ -92,7 +97,7 @@ disRoll(dice) {
   this.setState(() => {
     return {
       currentRoll: lowRoll,
-      rollLog: [...rollLog, {lowRoll, diceRolled: dice}],
+      rollLog: [...rollLog, {rolled: lowRoll, diceRolled: dice}],
       sumRoll: sumRoll + lowRoll
     };
     ;
@@ -140,39 +145,38 @@ console.log(this.state.currentRoll, x, y)
               <button id="d4" title="D4" onClick={() =>
                   this.setState({dice: dFour, diceImg:d4})}>
               </button>
-            </div>
+             </div>
             <div>
               <button id="d6" title="D6" onClick={() =>
                   this.setState({dice: dSix, diceImg:d6})}>
-
               </button>
-            </div>
+             </div>
             <div>
               <button id="d8" title="D8" onClick={() =>
                   this.setState({dice: dEight, diceImg:d8})}>
-              </button>
-            </div>
+               </button>
+             </div>
             <div>
               <button id="d10" title="D10" onClick={() =>
                   this.setState({dice: dTen, diceImg:d10})}>
               </button>
-            </div>
+             </div>
             <div>
               <button id="d12" title="D12" onClick={() =>
                   this.setState({dice: dTwelve, diceImg:d12})}>
               </button>
-            </div>
+             </div>
             <div>
               <button id="d20" title="D20" onClick={() =>
                   this.setState({dice: dTwenty, diceImg:d20})}>
               </button>
-            </div>
+             </div>
             <div>
               <button id="d100" title="D100" onClick={() =>
                   this.setState({dice: dHundred, diceImg:d100})}>
               </button>
-            </div>
-          </div>
+             </div>
+           </div>
           <div>
             <div>
               <button id="rollbtn" title="Roll" className="roll" onClick={() =>
@@ -184,15 +188,15 @@ console.log(this.state.currentRoll, x, y)
            <div id="radioBox"><label >Modifiers</label><br/>
              
            <label> <input type="radio" name="plus" id="plusFive" title="+5"  value="+5"></input> +5</label> 
-           <label> <input type="radio" name="minus" id="minusFive" title="-5"  value="-5"></input>-5</label>
+           <label> <input type="radio" name="plus" id="minusFive" title="-5"  value="-5"></input>-5</label>
            <label><br/>
            <input type="radio" name="plus" id="plusTwo" title="+2" value="+2"></input> +2</label>
            <label>
-             <input type="radio" name="minus" id="minusTwo" value="-2"></input> -2</label>
+             <input type="radio" name="plus" id="minusTwo" value="-2"></input> -2</label>
              <label><br/>
              <input type="radio" name="plus" id="plusOne" title="+1" value="+1"></input> +1</label>
              <label>
-           <input type="radio" name="minus" id="minusOne" title="-1" value="-1"></input>-1</label>
+           <input type="radio" name="plus" id="minusOne" title="-1" value="-1"></input>-1</label>
              <label><br/>
              <input type="radio" name="plus" id="zero" title="0"  value="0" defaultChecked></input>0</label>
              
