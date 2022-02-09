@@ -37,35 +37,67 @@ class Roller extends React.Component {
 
   roll(dice) {
     const {sumRoll, rollLog} = this.state
-    const rolled = dice[Math.floor((Math.random() * dice.length))]
-
+    var rolled = dice[Math.floor((Math.random() * dice.length))]
+    if(document.getElementById('plusFive').checked){
+      rolled= rolled + 5;
+    }else if(document.getElementById('plusTwo').checked){
+      rolled= rolled +2;
+    }else if (document.getElementById('plusOne').checked) {
+      rolled = rolled +1;
+    }else if(document.getElementById('minusOne').checked){
+      rolled= rolled - 1;
+    } else if(document.getElementById('minusTwo').checked){
+      rolled= rolled - 2;
+    }else if (document.getElementById('minusFive').checked){
+      rolled = rolled - 5;
+    }
     this.setState(() => {
       return {
         currentRoll: rolled,
         rollLog: [...rollLog, {rolled, diceRolled: dice}], 
         sumRoll: sumRoll + rolled 
       };
+      
 
     });
-    console.log(rollLog);
   };
 
 //advantage roll
 advRoll(dice) {
+  const {rollLog, sumRoll} = this.state
   let x = dice[Math.floor((Math.random() * dice.length))]
   let y = dice[Math.floor((Math.random() * dice.length))]
+  var highRoll = Math.max(x,y)
+  
+  this.setState(() => {
+    return {
+      currentRoll: highRoll,
+      rollLog: [...rollLog, {highRoll, diceRolled: dice}],
+      sumRoll: sumRoll + highRoll
+    };
+    
+  });
 
-return Math.max(x,y);
+console.log(this.state.currentRoll, x, y);
 }
 
 
 //disadvantage roll
 disRoll(dice) {
+  const {rollLog, sumRoll} = this.state
   let x = dice[Math.floor((Math.random() * dice.length))]
   let y = dice[Math.floor((Math.random() * dice.length))]
-
-return Math.min(x,y);
-
+  var lowRoll = Math.min(x,y)
+  
+  this.setState(() => {
+    return {
+      currentRoll: lowRoll,
+      rollLog: [...rollLog, {lowRoll, diceRolled: dice}],
+      sumRoll: sumRoll + lowRoll
+    };
+    ;
+  });
+console.log(this.state.currentRoll, x, y)
 }
 
 
@@ -79,7 +111,6 @@ return Math.min(x,y);
 
 //dice img
   getDiceImage(dice) {
-    console.log(dice)
     if (dice === dFour)
       return d4;
     if (dice === dSix)
@@ -148,7 +179,28 @@ return Math.min(x,y);
                   this.roll(dice)}>Roll
               </button>
             </div>
+                
             <div>
+           <div id="radioBox"><label >Modifiers</label><br/>
+             
+           <label> <input type="radio" name="plus" id="plusFive" title="+5"  value="+5"></input> +5</label> 
+           <label> <input type="radio" name="minus" id="minusFive" title="-5"  value="-5"></input>-5</label>
+           <label><br/>
+           <input type="radio" name="plus" id="plusTwo" title="+2" value="+2"></input> +2</label>
+           <label>
+             <input type="radio" name="minus" id="minusTwo" value="-2"></input> -2</label>
+             <label><br/>
+             <input type="radio" name="plus" id="plusOne" title="+1" value="+1"></input> +1</label>
+             <label>
+           <input type="radio" name="minus" id="minusOne" title="-1" value="-1"></input>-1</label>
+             <label><br/>
+             <input type="radio" name="plus" id="zero" title="0"  value="0" defaultChecked></input>0</label>
+             
+             
+      
+             <br/>
+           
+           </div>
               <button id="advan" title="Advantage" onClick={() =>
               this.advRoll(dice)}>Advantage</button>
               <button id="disadvan" title="Disadvantage" onClick={() =>
@@ -158,10 +210,9 @@ return Math.min(x,y);
               <button id="clearbtn" title="Clear" className="clear" onClick={() =>
                   this.clear(rollLog)}>clear
               </button>
-            </div>
+           </div>
           </div>
-
-          <div className="box" id="rollBox">
+           <div className="box" id="rollBox">
             <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll} </h1>
             <h1 id="rollDisplay" title="Current Roll" >{currentRoll} </h1>
           

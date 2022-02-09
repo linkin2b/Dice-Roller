@@ -24,7 +24,7 @@ body{
     background-color: rgba(255, 115, 0, 0.349);
     position: absolute;
     top: 50vh;
-    right: 2em;
+    right: 4.5em;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;    
@@ -40,7 +40,7 @@ body{
     background-color: rgba(255, 115, 0, 0.349);
     position: absolute;
     top: 50vh;
-    right: 1vw;
+    right: 9vw;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;    
@@ -48,11 +48,11 @@ body{
     overflow: hidden;
 }
 #current{
-    width: 1.2em;
+    width: 1.2;
     height: 1.2em;
     font: 4em sans-serif;
     position: absolute;
-    top: 49vh;
+    top: 50vh;
     right: 4em;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
@@ -115,7 +115,7 @@ body{
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
-   #d4:focus {
+   #d4::selection {
     background-color: chartreuse;
 }
    #d6{
@@ -237,4 +237,16 @@ body{
     background-color: yellow;
     display: flex;
     flex-direction: column;
+}
+#radioBox{
+    background-color: rgba(255, 115, 0, 0.349);
+    border:thick solid rgb(0, 0, 0);
+    position: absolute;
+    padding:5px;
+    color:#222;
+    font-family:corbel,sans-serif;
+    font-size: 1.5em;
+    margin: 10px;
+    top: 0%;
+    right: 6%;
 }
