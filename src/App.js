@@ -224,7 +224,7 @@ console.log(this.state.currentRoll, x, y)
             </div>
             <div>
               <button id="clearbtn" title="Clear" className="clear" onClick={() =>
-                  this.clear(rollLog)}>clear
+                  this.clear(rollLog)}>Clear
               </button>
            </div>
           </div>
