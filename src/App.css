@@ -10,11 +10,15 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
+    height: 72vh;
+    width: 25vw;
     border:thick solid black;
     border-radius: 5px;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
-    
-}
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y:auto;
+    }
 
 #rollDisplay{
     border:thick solid black;
@@ -45,7 +49,6 @@ body{
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;    
     font-family: inherit;
-    overflow: hidden;
 }
 #current{
     width: 1.2;
@@ -85,121 +88,108 @@ body{
     font: 200;
     border: thin solid black;
     background-color: rgba(255, 115, 0, 0.349);
-    margin: 5px;
+    margin-left: 40%;
     text-align: center;
     min-height: 40px;
     border-radius: 12%;
     color: black;
     font-size: 2rem;
+    width: 110px;
+    white-space: pre;
 }
 #d12{
  background-image: url('/src/imgs/d12.png');
  background-repeat: no-repeat;
  background-size: contain;
  background-color:rgba(255, 99, 71, 0);
- width: 100px;
- height: 100px;
+ width: 20vw;
+ height: 10vh;
  border-color: rgba(95, 158, 160, 0);
  border-radius: 100%;
 }
-#d12:focus {
-    background-color: chartreuse;
-}
+
 #d4{
     background-image: url('/src/imgs/d4.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
-   #d4::selection {
-    background-color: chartreuse;
-}
+
    #d6{
     background-image: url('/src/imgs/d6.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }  
-   #d6:focus {
-    background-color: chartreuse;
-}
 
    #d8{
     background-image: url('/src/imgs/d8.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }  
-    #d8:focus {
-    background-color: chartreuse;
-}
+
    #d10{
     background-image: url('/src/imgs/d10.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
-   #d10:focus {
-    background-color: chartreuse;
-}
+
    #d20{
     background-image: url('/src/imgs/d20.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
-   #d20:focus {
-    background-color: chartreuse;
-}
+
    #d100{
     background-image: url('/src/imgs/d100.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: rgba(255, 235, 205, 0.068);
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 10vh;
     border-color: rgba(95, 158, 160, 0);
     border-radius: 100%;
    }
-   #d100:focus {
-    background-color: chartreuse;
-}
 
 #clearbtn{
 
-    background-color: rgba(112, 128, 144, 0.527);
+    background-color: rgba(255, 115, 0, 0.568);
     width: 100px;
     height: 100px;
     border-radius: 5px;
     padding: 10px;
-    right: 10em;
+    right: 8.2em;
     bottom: 3%;
     position:absolute;
-    filter: drop-shadow(30px 10px 4px #4e4e50a1);
-    
+    filter: drop-shadow(30px 10px 4px #9c9ce7a1);
+    font-weight: bold;
+    font-size: 1em;
 }
 #rollbtn{
-    background-color: rgba(112, 128, 144, 0.527);
+    background-color: rgba(255, 115, 0, 0.568);
     color:rgb(0, 0, 0);
     width: 100px;
     height: 100px;
@@ -208,11 +198,13 @@ body{
     bottom: 3%;
     right: 1em;
     position: absolute;
-    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    filter: drop-shadow(30px 10px 4px #9c9ce7a1);
+    font-weight: bolder;
+    font-size: 1em;
 }
 
 #advan{
-    background-color: rgba(42, 119, 61, 0.527);
+    background-color: rgba(36, 184, 73, 0.575);
     width: 100px;
     height: 100px;
     border-radius: 5px;
@@ -223,7 +215,7 @@ body{
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     }
 #disadvan{
-    background-color: rgba(138, 66, 54, 0.527);
+    background-color: rgba(238, 96, 71, 0.575);
     width: 100px;
     height: 100px;
     border-radius: 5px;
@@ -232,7 +224,8 @@ body{
     bottom: 11em;
     position:absolute;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
-}
+    
+    }
 .box{
     background-color: yellow;
     display: flex;
@@ -249,4 +242,12 @@ body{
     margin: 10px;
     top: 0%;
     right: 6%;
+}
+
+.active-dice{
+    background: linear-gradient(to right, rgba(231, 228, 228, 0.219) 50%, rgba(214, 68, 68, 0.651) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+  border-radius: 69%;
 }

@@ -15,7 +15,7 @@ const dEight = [1, 2, 3, 4, 5, 6, 7, 8];
 const dTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const dTwelve = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const dTwenty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 14, 15, 16, 17, 18, 19, 20];
-const dHundred = [...Array(100).keys()];
+const dHundred = [...Array(100).keys()].slice(1,101);
 
 
 class Roller extends React.Component {
@@ -29,9 +29,12 @@ class Roller extends React.Component {
       rollLog: [],
       diceImg: d20,
       totalRoll: [],
-      sumRoll: 0
+      sumRoll: 0,
+      isActive: false
     };
   };
+  
+
 
 //random roll withing die parameters
 
@@ -114,6 +117,15 @@ console.log(this.state.currentRoll, x, y)
     })
   }
 
+  //maintain Focus
+  addActiveClass(dice) {
+    if (this.state.dice === dice) { // If current state.dice === dice
+      return 'active-dice';
+    } else {
+      return '';
+    };
+  }
+
 //dice img
   getDiceImage(dice) {
     if (dice === dFour)
@@ -140,38 +152,38 @@ console.log(this.state.currentRoll, x, y)
 
     return (
         <div>
-          <div id="dieTray" onChange={this.handleChange}>
-            <div>
-              <button id="d4" title="D4" onClick={() =>
+          <div id="dieTray" onChange={this.handleChange} tabIndex="-1">
+            <div className={this.addActiveClass(dFour)}>
+              <button id="d4" index={0} title="D4" onClick={() =>
                   this.setState({dice: dFour, diceImg:d4})}>
-              </button>
+              </button>          
              </div>
-            <div>
-              <button id="d6" title="D6" onClick={() =>
+            <div className={this.addActiveClass(dSix)}>
+              <button id="d6" index={1} title="D6" onClick={() =>
                   this.setState({dice: dSix, diceImg:d6})}>
               </button>
              </div>
-            <div>
+            <div className={this.addActiveClass(dEight)}>
               <button id="d8" title="D8" onClick={() =>
                   this.setState({dice: dEight, diceImg:d8})}>
                </button>
              </div>
-            <div>
+            <div className={this.addActiveClass(dTen)}>
               <button id="d10" title="D10" onClick={() =>
                   this.setState({dice: dTen, diceImg:d10})}>
               </button>
              </div>
-            <div>
+            <div className={this.addActiveClass(dTwelve)}>
               <button id="d12" title="D12" onClick={() =>
                   this.setState({dice: dTwelve, diceImg:d12})}>
               </button>
              </div>
-            <div>
+            <div className={this.addActiveClass(dTwenty)}>
               <button id="d20" title="D20" onClick={() =>
                   this.setState({dice: dTwenty, diceImg:d20})}>
               </button>
              </div>
-            <div>
+            <div className={this.addActiveClass(dHundred)}>
               <button id="d100" title="D100" onClick={() =>
                   this.setState({dice: dHundred, diceImg:d100})}>
               </button>
@@ -224,7 +236,7 @@ console.log(this.state.currentRoll, x, y)
             <ul id="rollRecord" title="Rolls Made" className="container">
               {rollLog.slice(0).reverse().map((i, index) => (
                     <div className="" key={i*index}>
-                      <li id="card">{i.rolled}<br/>
+                      <li id="card">{i.rolled} &nbsp;&nbsp;&nbsp;       
                         <img style={{maxWidth: 28}} src={this.getDiceImage(i.diceRolled)}/>  
                         </li>
                     </div>
