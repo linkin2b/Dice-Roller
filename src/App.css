@@ -22,39 +22,45 @@ body{
 
 #rollDisplay{
     border:thick solid black;
-    width: 6vh;
+    min-width: 60px;
+    width: fit-content;
+    block-size: fit-content;
     height: 6vh;
     font: 5vh sans-serif;
     background-color: rgba(255, 115, 0, 0.349);
-    position: absolute;
-    top: 50vh;
-    right: 4.5em;
-    text-align: center;
-    filter: drop-shadow(30px 10px 4px #4e4e50a1);
-    border-radius: 5px;    
-    font-family: inherit;
-    overflow: hidden;
-    padding-right: 1vw;
-}
-#sumRoll{
-    border:thick solid black;
-    width: 6vh;
-    height: 6vh;
-    font: 5vh sans-serif;
-    background-color: rgba(255, 115, 0, 0.349);
-    position: absolute;
+    position: relative;
     top: 50vh;
     right: 9vw;
     text-align: center;
     filter: drop-shadow(30px 10px 4px #4e4e50a1);
     border-radius: 5px;    
     font-family: inherit;
+    margin-right: 2%;
+    ;
+}
+#sumRoll{
+    border:thick solid black;
+    min-width: 60px;
+    width: fit-content;
+    block-size: fit-content;
+    height: 6vh;
+    font: 5vh sans-serif;
+    background-color: rgba(255, 115, 0, 0.349);
+    position:relative;
+    flex-direction: row;
+    top: 50vh;
+    right: 9vw;
+    text-align: center;
+    filter: drop-shadow(30px 10px 4px #4e4e50a1);
+    border-radius: 5px;    
+    font-family: inherit;
+    margin-left: 2%;
 }
 #current{
-    width: 6vh;
-    height: 6vh;
+    width: 100px;
+    height: 100px;
     font: 4em sans-serif;
-    position: absolute;
+    position: relative;
     top: 50vh;
     right: 4em;
     text-align: center;
@@ -230,9 +236,13 @@ body{
     
     }
 .box{
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0);
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    margin: 10%;
+    justify-content: right;
+    gap: 30px;
+    
 }
 #radioBox{
     background-color: rgba(255, 115, 0, 0.349);
