@@ -229,10 +229,13 @@ console.log(this.state.currentRoll, x, y)
            </div>
           </div>
            <div className="box" id="rollBox">
-            <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll} </h1>
-            <h1 id="rollDisplay" title="Current Roll" >{currentRoll} </h1>
-          
-
+             <div>
+            <h1 id="sumRoll" title="Total" alt="Total Of Rolls">{sumRoll}</h1>
+           <text id="totalName">Total</text>
+                </div>
+                <div>
+            <h1 id="rollDisplay" title="Current Roll" >{currentRoll}</h1>
+            <text id="currentName">Current<br/>Roll</text></div>
             <ul id="rollRecord" title="Rolls Made" className="container">
               {rollLog.slice(0).reverse().map((i, index) => (
                     <div className="" key={i*index}>

@@ -69,6 +69,20 @@ body{
     font-family:inherit; 
     overflow-inline: auto;
 }
+#totalName{
+    position: absolute;
+    top: 60vh;
+    right: 13vw;
+    font: 4em;
+
+}
+#currentName{
+    position: absolute;
+    top: 59vh;
+    right: 38vw;
+    font: 4em;
+
+}
 #rollRecord{
     background-image: url("/src/imgs/trayBG.jfif");
     position:absolute;
@@ -241,7 +255,7 @@ body{
     flex-direction: row-reverse;
     margin: 10%;
     justify-content: right;
-    gap: 30px;
+    gap: 45px;
     
 }
 #radioBox{
